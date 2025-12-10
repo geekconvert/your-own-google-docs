@@ -30,3 +30,24 @@ Frontend expects the backend at `http://localhost:3000` (see `frontend/src/Helpe
 1) Start MongoDB locally.
 2) Run the backend (`npm start` in `backend`).
 3) Run the frontend (`npm run dev` in `frontend`) and open the shown URL.
+
+## Recreate the project from scratch (optional)
+If you want to reproduce this setup in a fresh folder:
+```bash
+# Backend
+npx express-generator backend --view=ejs
+cd backend
+npm install
+npm install bcryptjs jsonwebtoken mongoose cors
+
+# Add your models/routes (see this repo's backend/ for reference)
+
+# Frontend
+cd ..
+npm create vite@latest frontend -- --template react
+cd frontend
+npm install
+npm install react-router-dom react-icons react-avatar
+
+# Add your pages/components and point API calls to your backend
+```
